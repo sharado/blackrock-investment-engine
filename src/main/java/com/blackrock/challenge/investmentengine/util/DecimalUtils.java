@@ -1,4 +1,4 @@
-package util;
+package com.blackrock.challenge.investmentengine.util;
 
 import java.math.BigDecimal;
 import java.math.MathContext;

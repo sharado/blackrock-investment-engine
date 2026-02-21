@@ -1,3 +1,7 @@
 spring:
   application:
     name: blackrock
+
+server:
+  port: 5477
+  address: 0.0.0.0

@@ -1,0 +1,18 @@
+package com.blackrock.challenge.investmentengine.api.dto;
+
+
+import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class KPeriodDto {
+
+    @NotNull
+    private String start;
+
+    @NotNull
+    private String end;
+}
+
