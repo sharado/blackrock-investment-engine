@@ -50,4 +50,27 @@ public final class TransactionMapper {
                 .remanent(totals.remanent().doubleValue())
                 .build();
     }
+
+    public static Transaction toDomain(TransactionDto dto) {
+        return Transaction.builder()
+                .date(LocalDateTime.parse(dto.getDate(), FORMATTER))
+                .amount(DecimalUtils.bd(dto.getAmount()))
+                .ceiling(DecimalUtils.bd(dto.getCeiling()))
+                .remanent(DecimalUtils.bd(dto.getRemanent()))
+                .build();
+    }
+
+    public static InvalidTransactionDto toInvalidDto(
+            Transaction tx,
+            String message
+    ) {
+        return InvalidTransactionDto.builder()
+                .date(tx.getDate().format(FORMATTER))
+                .amount(tx.getAmount().doubleValue())
+                .ceiling(tx.getCeiling().doubleValue())
+                .remanent(tx.getRemanent().doubleValue())
+                .message(message)
+                .build();
+    }
+
 }
